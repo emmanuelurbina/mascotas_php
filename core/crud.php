@@ -1,5 +1,5 @@
 <?php
-require_once "./connection.php";
+require_once "connection.php";
 abstract class Crud extends Connection
 {
   private $table;
