@@ -39,7 +39,7 @@ abstract class Crud extends Connection
     /** ELIMINA EL ELEMENTO QUE HAGA MATCH CON @id */
     try {
       //code...
-      $stm = $this->pdo->prepare("DELETE * FROM $this->table where id=? ");
+      $stm = $this->pdo->prepare("DELETE FROM $this->table WHERE id=? ");
       $stm->execute(array($id));
     } catch (\PDOException $e) {
       echo $e->getMessage();
