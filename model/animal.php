@@ -1,5 +1,5 @@
 <?php
-require_once './crud.php';
+require_once 'core/crud.php';
 
 class Animal extends Crud
 {
