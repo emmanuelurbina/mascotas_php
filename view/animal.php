@@ -23,6 +23,33 @@
             </th>
           <?php endforeach; ?>
         </thead>
+        <tbody>
+          <?php foreach ($this->model->get_all() as $animal) : ?>
+            <tr>
+              <td>
+                <?= $animal->name; ?>
+              </td>
+              <td>
+                <?= $animal->specie; ?>
+              </td>
+              <td>
+                <?= $animal->breed; ?>
+              </td>
+              <td>
+                <?= $animal->color; ?>
+              </td>
+              <td>
+                <?= $animal->age; ?>
+              </td>
+              <td>
+                <a href="index.php?controller=animal&action=show_by_id&id=<?= $animal->id ?>">Editar</a>
+              </td>
+              <td>
+                <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="index.php?controller=animal&action=quit&id=<?php echo $animal->id; ?>">Eliminar</a>
+              </td>
+            </tr>
+          <?php endforeach; ?>
+        </tbody>
       </table>
     </div>
   </section>

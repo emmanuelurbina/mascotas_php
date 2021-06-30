@@ -32,7 +32,11 @@ class AnimalController
     $animal->color = $_REQUEST['color'];
     $animal->age = $_REQUEST['age'];
 
-    $animal->id > 0 ? $animal->update() : $animal->create();
+    if($animal->id > 0 ) {
+      $animal->update();
+    } else {
+      $animal->create();
+    }
     header('Location: index.php');
   }
 
